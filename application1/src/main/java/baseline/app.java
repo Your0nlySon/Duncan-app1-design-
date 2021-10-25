@@ -1,25 +1,29 @@
 package baseline;
-import java.io.IOException;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
 
-import static javafx.application.Application.launch;
 
-public class Application {
+public class app extends Application  {
 
-    public void start(Stage stage) throws IOException {
+
+    @Override
+    public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Application.fxml"));
-
         Scene scene = new Scene(root);
-        stage.setTitle("Addition");
-        stage.setScene(scene);
-        stage.show();
+        primaryStage.setTitle("Todo List");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
     }
 }
